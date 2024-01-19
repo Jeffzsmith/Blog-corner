@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Blog-corner</h1>
+    <p>Check out the latest blog posts:</p>
+
+    <div class="div">
+        <% if (submissions && submissions.length > 0) { %>
+            <% for (let i = 0; i < submissions.length; i++) { %>
+                <div>
+                    <h2><%= submissions[i].title %></h2>
+                    <p><%= submissions[i].essay %></p>
+                    
+                    <form action="/delete/<%= i %>" method="post" class="button-form">
+                        <input type="submit" value="Delete" class="delete-button">
+                        <a href="/edit/<%= i %>" class="button">Edit</a>
+                    </form>
+
+                    <hr>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>No blog posts available.</p>
+        <% } %>
+    </div>
+
+    <a href="/submit">Write a new blog post</a>
+</body>
+</html>

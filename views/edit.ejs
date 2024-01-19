@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Edit Blog</title>
+</head>
+<body>
+    <h1>Edit Blog Entry:</h1>
+    <form action="/edit/<%= index %>" method="post">
+        <label>Title:</label><br>
+        <input type="text" name="title" value="<%= title %>" required><br><br>
+        <label>Essay:</label><br>
+        <textarea name="essay" rows="5" cols="33" required><%= essay %></textarea><br><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
